@@ -18,7 +18,7 @@ Some things a lab checklist asks for (does the code actually reproduce every res
 1. If the person provides a reference paper the code implements, keep it open for the **Paper alignment** check below — otherwise skip that check entirely rather than guessing at intended behavior.
 2. Run all of Sections 1–4 below by default — this is a full review, not an opt-in checklist.
 3. If you have a way to actually execute the code (an available interpreter/compiler and its inputs), try running it and report the real outcome — errors, warnings, or success — rather than assuming it works. If you can't run it, say so rather than silently skipping the claim.
-4. For an accompanying repository (not just a source file), also apply `../writing-review/references/repo-rules.md` — the same license/`.gitignore`/README/requirements checks apply to any lab repo, not just ones with a paper attached.
+4. For an accompanying repository (not just a source file), also apply `references/repo-rules.md` — the same license/`.gitignore`/README/requirements checks apply to any lab repo, not just ones with a paper attached.
 5. Write up findings grouped by section, same output format as `writing-review`: location → quote/reference → what's wrong. Skip any section with nothing to report.
 
 ## Section 1 — Style & declarations

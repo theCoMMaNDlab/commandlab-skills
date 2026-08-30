@@ -23,7 +23,7 @@ Likewise, silence is a valid outcome. A section with no problems gets no comment
 2. **Check for a specific ask first.** If the person has flagged a specific question, section, or concern ("does my intro make the contribution clear?", "can you sanity-check Equation 4?"), address that directly and completely before doing anything else. It leads the response.
 3. **Run the author checklist** (below) and the **style and formatting rules** (below) against the whole document. These are the default, always-on checks — do them regardless of whether the person asked for "formatting feedback" specifically, since that's the core purpose of this skill.
 4. **If the source is LaTeX**, also apply `references/tex-rules.md`.
-5. **If a GitHub repository accompanies the paper**, also apply `references/repo-rules.md`.
+5. **If a GitHub repository accompanies the paper**, also apply the `code-review` skill's `references/repo-rules.md`.
 6. **Write up the mechanical findings** using the output format below.
 7. **Then offer the optional passes** (below) rather than staying silent about them — a short line like "I can also look at argument/structure, clarity, grammar, citations, and figure design if you want — just say so" after the mechanical findings. Only actually run them if asked, or if the person asked for general/full feedback up front (in which case fold them into the same response instead of offering first).
 
@@ -92,5 +92,5 @@ Group findings under short headers that match the categories above (e.g., "Autho
 
 For further detail on rules that only apply to specific situations, see:
 - `references/tex-rules.md` — additional rules that only apply when reviewing LaTeX source files directly (not just compiled output), including the preamble check.
-- `references/repo-rules.md` — additional rules for a paper's accompanying GitHub repository.
+- `../code-review/references/repo-rules.md` — additional rules for a paper's accompanying GitHub repository (owned by the `code-review` skill since it applies to any lab repo, not just paper ones).
 - `references/preamble.tex` — the lab's canonical LaTeX preamble (packages + macros). Point someone here if they're starting a new manuscript and ask what to include.
