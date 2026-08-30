@@ -42,14 +42,14 @@ Check these regardless of document type:
 - **Funding statement.** The acknowledgements section must state funding and include at least one grant/award number. If acknowledgements exist but contain no grant number, or funding is mentioned elsewhere (e.g., a footnote) but not in acknowledgements, flag it with a quote of what's there.
 - **Compilation.** If you have the full LaTeX source and a working LaTeX install (or can invoke one), actually try to compile it and report real errors/warnings with the log line that produced them. If you only have a partial source or no compiler available, say so rather than claiming it compiles cleanly.
 - **Roman (upright) formatting for abbreviations in math.** In display or inline equations, any subscript, superscript, or standalone symbol that represents an abbreviation or initialism (e.g., a subscript "max" or "eq" meaning "equilibrium") should be upright/roman, not italic math font. Any of `\mathrm{}`, `\rm{}`, `\text{}`, or the lab's `\scas{}` macro satisfies this — none is mandatory, you're only flagging plain math-italic. Quote the specific equation and symbol.
-- **Tense consistency within sections.** Flag a sentence where tense shifts within a section that should be internally consistent (e.g., a Methods section that mixes past tense "samples were heated" with present tense "the sample is heated" without reason). Quote both sentences. Don't try to enforce a specific past-vs-present rule beyond internal consistency — that call is often genuinely ambiguous.
+- **Tense.** Use present tense for general truths and established facts, and past tense for what you did or found (e.g., "the sample is heated" is fine as a general description of the method, but "we observed X" — not "we observe X" — for a specific result). Flag a sentence using the wrong tense for what it's describing, or a tense shift within a section with no such reason behind it. Quote the sentence(s).
 
 ## Optional passes
 
 Offer these after the mechanical checklist (step 7 above); only run them when asked, or when the person wanted general/full feedback from the start. They're more subjective than the checklist and shouldn't be run reflexively on every draft, but they shouldn't be forgotten either.
 
-- **Argument and structure**: Is the contribution stated clearly? Is the logic sound and well organized? Do the introduction and conclusion actually do their jobs? Point to the specific paragraph or sentence that is (or should be) doing this work.
-- **Clarity and style**: Is the writing concise and precise? Is the tone appropriate for academic work? Quote specific sentences that are jargon-heavy, vague, or wordy, and say what's unclear about them.
+- **Argument and structure**: Is the contribution stated clearly? Is the logic sound and well organized? Do the introduction and conclusion actually do their jobs — introduction moving from the general concept to the specific research focus, discussion moving back from the specific findings to the general concept? Are there transitions between sections, and between paragraphs within a section, or does it just jump? Point to the specific paragraph or sentence that is (or should be) doing this work.
+- **Clarity and style**: Is the writing concise and precise? Is the tone appropriate for academic work — results and discussion stated with appropriate confidence, not hedging on your own findings? Are there gaps where a subject needed more explanation or introduction before being used? Is every specialized/domain term (not just acronyms) defined on first use? Quote specific sentences that are jargon-heavy, vague, wordy, or under-explained, and say what's unclear about them.
 - **Grammar and mechanics**: Flag specific grammatical errors, awkward phrasing, or unclear sentences by quoting them.
 - **Citations and evidence**: Are specific claims left unsupported? Quote the claim and note the missing citation, or point out inconsistent citation style (e.g., mixing numeric and author-year within the same document).
 - **Figure design**: apply the `figure-review` skill (axis units, no embedded titles, color/layout conventions if matplotlib source is available). Production-workflow items (raw image format, Keynote/Illustrator lettering, reworking figures for slides) aren't checkable at all — they're on the human checklist in the Writing style guide.
@@ -65,6 +65,7 @@ Apply these to the whole document (or all documents, if it's a multi-file LaTeX 
    - It's correct — not an error — for an acronym to be defined once on first use in the abstract and again on first use in the main text; don't flag that as a duplicate definition.
    - Redefinition inside a figure caption is also fine and shouldn't be flagged.
    - If the document uses more than about three non-standard acronyms, suggest cutting some for readability, and list which ones you'd consider cutting. Standard acronyms that don't count toward this: MRI, FEA, DNA, RNA, ASD, CSF.
+   - Flag an acronym that's defined but only ever used once afterward — it's not saving anything and should just be spelled out instead.
 4. **Display equations.** A display equation is grammatically part of its sentence:
    - It must not be preceded by a period.
    - If it ends the sentence, it needs a period after it; if the sentence continues, it usually needs a comma after it. Quote the equation number and the punctuation (or lack of it) around it.
@@ -80,6 +81,13 @@ Apply these to the whole document (or all documents, if it's a multi-file LaTeX 
 8. **Figure ordering.** Figures (and subfigures) must be introduced and referenced in the order they appear. Flag any reference that's out of order, and flag any figure that's never referenced in the text at all.
 9. **Latin phrases.** *in vivo*, *in vitro*, *in silico*, *in situ*, and similar Latin phrases must be italicized. Quote any instance that isn't.
 10. **Spelling out numbers.** Integers below 10 should be spelled out in prose ("three samples," not "3 samples"). This doesn't apply to numbers with units, percentages, table contents, or numbers inside math. Quote the sentence.
+11. **Capitalized cross-references.** `Table`, `Figure`, `Equation`, and `Section` should be capitalized when referring to a specific numbered one in text ("Table 1," not "table 1"). Quote the offending reference.
+12. **Overused transitional words.** "However," "furthermore," "thereby," "thus," "also," "additionally," "moreover," and similar transitions are fine individually but shouldn't be leaned on as connective tissue between most sentences in a paragraph. Flag a paragraph where several sentences in a row each open with one.
+13. **Long or run-on sentences.** Flag a sentence long enough, or with enough independent clauses strung together, that it's genuinely hard to follow — not every sentence over some fixed length. Quote it and suggest where it could split.
+14. **Em dashes.** Flag use of an em dash (—) in prose; the lab prefers a semicolon or splitting into two sentences instead. Quote the sentence.
+15. **Inconsistent capitalization.** Beyond title case (rule 1), flag a term capitalized inconsistently across the document (e.g., a named method or material capitalized in some places and lowercase in others with no grammatical reason).
+16. **Passive voice and first person.** Flag inconsistent use within a section that should read uniformly — e.g., switching between "we measured" and "the measurement was taken" without reason. Don't flag passive voice or first person on their own; only the inconsistency.
+17. **Keywords.** If the venue/template expects a keywords list (e.g., there's a placeholder or a keywords command in the source), flag if it's empty or missing.
 
 ## Paper-specific requirements
 
