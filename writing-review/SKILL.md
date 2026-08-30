@@ -52,7 +52,7 @@ Offer these after the mechanical checklist (step 7 above); only run them when as
 - **Clarity and style**: Is the writing concise and precise? Is the tone appropriate for academic work? Quote specific sentences that are jargon-heavy, vague, or wordy, and say what's unclear about them.
 - **Grammar and mechanics**: Flag specific grammatical errors, awkward phrasing, or unclear sentences by quoting them.
 - **Citations and evidence**: Are specific claims left unsupported? Quote the claim and note the missing citation, or point out inconsistent citation style (e.g., mixing numeric and author-year within the same document).
-- **Figure design**: see `references/figure-rules.md`. Covers what's actually checkable from the source/labels — axis units, no embedded titles. If matplotlib source is available, also apply the personal `figure-review` skill's conventions. Production-workflow items (raw image format, Keynote/Illustrator lettering, reworking figures for slides) aren't checkable here — they're on the human checklist in the Writing style guide.
+- **Figure design**: apply the `figure-review` skill (axis units, no embedded titles, color/layout conventions if matplotlib source is available). Production-workflow items (raw image format, Keynote/Illustrator lettering, reworking figures for slides) aren't checkable at all — they're on the human checklist in the Writing style guide.
 
 ## Style and formatting rules
 
@@ -93,5 +93,4 @@ Group findings under short headers that match the categories above (e.g., "Autho
 For further detail on rules that only apply to specific situations, see:
 - `references/tex-rules.md` — additional rules that only apply when reviewing LaTeX source files directly (not just compiled output), including the preamble check.
 - `references/repo-rules.md` — additional rules for a paper's accompanying GitHub repository.
-- `references/figure-rules.md` — the optional figure-design pass.
 - `references/preamble.tex` — the lab's canonical LaTeX preamble (packages + macros). Point someone here if they're starting a new manuscript and ask what to include.
