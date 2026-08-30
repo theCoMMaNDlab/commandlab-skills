@@ -1,0 +1,43 @@
+% CoMMaND lab canonical preamble.
+% Copy into a new manuscript, or check an existing one's preamble against this
+% for the academic-writing-feedback skill's "Preamble" check (see tex-rules.md).
+
+% packages
+\usepackage{amsfonts, amsmath, amsthm, amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\usepackage{xcolor}
+
+\graphicspath{{./figures/}}
+
+% parameters
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% scalars
+\newcommand{\sca}[1]{\mbox{\rm{#1}}{}} % roman
+\newcommand{\ltr}[1]{\mbox{\sf{#1}}} % sans serif
+\newcommand{\bltr}[1]{\mbox{\sffamily{\bfseries{{#1}}}}} % bold sans serif
+
+% matrix
+\newcommand{\mat}[1]{\mbox{\bf #1}{}}
+
+% 1st and 2nd order tensors
+\newcommand{\ten}[1]{\mbox{\boldmath $#1$}{}}
+
+% 4th order tensors
+\newcommand{\tenf}[1]{\mbox{{\sffamily{\bfseries {#1}}}}}
+
+% script sizes (small + upright; see SKILL.md for when this is/isn't required)
+\newcommand{\scas}[1]{\mbox{{\scriptsize{${\rm{#1}}$}}}{}}
+\newcommand{\tens}[1]{\mbox{\boldmath{\scriptsize{$#1$}}}{}}
+
+% revisions
+\newcommand{\rev}[1]{{\color{red}{#1}}}
+
+% alphabetic lists
+\newenvironment{abc}
+  { ~\begin{enumerate}[label=\alph*)] }
+  { \end{enumerate} }
