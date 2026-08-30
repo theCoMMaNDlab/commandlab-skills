@@ -9,7 +9,7 @@ name: code-review
 
 This skill encodes the CoMMaND lab's code review conventions, covering both Python and the lab's legacy/scientific Fortran (including Abaqus UEL subroutines, which follow different conventions than idiomatic Python and shouldn't be forced into Python idioms).
 
-Same precision standard as the lab's `academic-writing-feedback` skill: every point must be anchored to an exact location (quote the line, name the variable/function, give the line number if visible) — never a vague "check for X" that just pushes the work back onto the person. Don't mention what's already fine. No closing summary — the list of specific points is the entire deliverable.
+Same precision standard as the lab's `writing-review` skill: every point must be anchored to an exact location (quote the line, name the variable/function, give the line number if visible) — never a vague "check for X" that just pushes the work back onto the person. Don't mention what's already fine. No closing summary — the list of specific points is the entire deliverable.
 
 Some things a lab checklist asks for (does the code actually reproduce every result in the paper, has the mesh-refinement/validation study actually been done, has someone actually run it end to end and signed off) require running the code or judging finished scientific work — not something reviewable from source alone. Those live in the "Code" addendum of the lab's [Writing style guide](https://drive.google.com/open?id=1JjN-z04sPDuR-2nwmUV6B3Vk3tdtVNaU4u-D1NsQYBs) as a human checklist. Mention it exists when relevant, don't try to check its items yourself.
 
@@ -18,8 +18,8 @@ Some things a lab checklist asks for (does the code actually reproduce every res
 1. If the person provides a reference paper the code implements, keep it open for the **Paper alignment** check below — otherwise skip that check entirely rather than guessing at intended behavior.
 2. Run all of Sections 1–4 below by default — this is a full review, not an opt-in checklist.
 3. If you have a way to actually execute the code (an available interpreter/compiler and its inputs), try running it and report the real outcome — errors, warnings, or success — rather than assuming it works. If you can't run it, say so rather than silently skipping the claim.
-4. For an accompanying repository (not just a source file), also apply `../academic-writing-feedback/references/repo-rules.md` — the same license/`.gitignore`/README/requirements checks apply to any lab repo, not just ones with a paper attached.
-5. Write up findings grouped by section, same output format as `academic-writing-feedback`: location → quote/reference → what's wrong. Skip any section with nothing to report.
+4. For an accompanying repository (not just a source file), also apply `../writing-review/references/repo-rules.md` — the same license/`.gitignore`/README/requirements checks apply to any lab repo, not just ones with a paper attached.
+5. Write up findings grouped by section, same output format as `writing-review`: location → quote/reference → what's wrong. Skip any section with nothing to report.
 
 ## Section 1 — Style & declarations
 

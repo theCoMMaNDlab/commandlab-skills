@@ -1,4 +1,5 @@
 ---
+name: figure-review
 description: Conventions for creating plots and figures in Python (matplotlib) — layout, color usage, axes, math typesetting, avoiding hard-coded style values. Use when writing or reviewing any plotting/visualization code.
 ---
 

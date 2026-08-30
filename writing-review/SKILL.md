@@ -2,7 +2,7 @@
 date_created: 2026-08-29 Sat
 date_modified: 2026-08-29 Sat
 description: Give feedback on an academic paper, thesis chapter, or manuscript draft (LaTeX source, .docx, .pdf, or pasted text) against the CoMMaND lab's writing guidelines — author/funding checklist, formatting and style rules (title case, Oxford commas, acronym usage, equation punctuation, brackets, tables, figure captions and ordering, Latin phrases, number spelling), LaTeX-specific typesetting (one-sentence-per-line, tensor notation, siunitx, autoref, sub/superscripts, biblatex, preamble), and an optional figure-design pass. Use this whenever someone shares a paper draft and asks for feedback, review, proofreading, or a formatting/style check — including requests like "can you review my draft," "check this against our style guide," "does this paper have any formatting issues," or "give feedback on this section" — even if they don't mention "guidelines" explicitly. Also use it when reviewing a paper's accompanying GitHub repository.
-name: academic-writing-feedback
+name: writing-review
 ---
 
 ## Academic writing feedback
@@ -52,7 +52,7 @@ Offer these after the mechanical checklist (step 7 above); only run them when as
 - **Clarity and style**: Is the writing concise and precise? Is the tone appropriate for academic work? Quote specific sentences that are jargon-heavy, vague, or wordy, and say what's unclear about them.
 - **Grammar and mechanics**: Flag specific grammatical errors, awkward phrasing, or unclear sentences by quoting them.
 - **Citations and evidence**: Are specific claims left unsupported? Quote the claim and note the missing citation, or point out inconsistent citation style (e.g., mixing numeric and author-year within the same document).
-- **Figure design**: see `references/figure-rules.md`. Covers what's actually checkable from the source/labels — axis units, no embedded titles. If matplotlib source is available, also apply the personal `plotting` skill's conventions. Production-workflow items (raw image format, Keynote/Illustrator lettering, reworking figures for slides) aren't checkable here — they're on the human checklist in the Writing style guide.
+- **Figure design**: see `references/figure-rules.md`. Covers what's actually checkable from the source/labels — axis units, no embedded titles. If matplotlib source is available, also apply the personal `figure-review` skill's conventions. Production-workflow items (raw image format, Keynote/Illustrator lettering, reworking figures for slides) aren't checkable here — they're on the human checklist in the Writing style guide.
 
 ## Style and formatting rules
 

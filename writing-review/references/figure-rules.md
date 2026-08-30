@@ -1,11 +1,11 @@
 # Figure design rules
 
-Optional pass — only run when offered and accepted, or when asked for general/full feedback. Covers what's actually checkable from source/labels; overlaps with the personal `plotting` skill (`~/.claude/skills/plotting/SKILL.md`), which has the fuller set of matplotlib-code conventions (color scales, layout, hard-coded style values, axis defaults) — apply that skill too if matplotlib source is available.
+Optional pass — only run when offered and accepted, or when asked for general/full feedback. Covers what's actually checkable from source/labels; overlaps with the personal `figure-review` skill (`~/.claude/skills/figure-review/SKILL.md`), which has the fuller set of matplotlib-code conventions (color scales, layout, hard-coded style values, axis defaults) — apply that skill too if matplotlib source is available.
 
 ## Checkable here
 
 - **Axis units in brackets.** Axis labels should include units in brackets, e.g. `[mm]`, `[-]` for dimensionless. Quote any axis label with a unit written another way (parentheses, no brackets, unit missing entirely where one is clearly needed).
-- **No title on the figure itself.** A paper figure should never have a plot title — the first sentence of the figure caption serves as the title. This is unconditional for paper figures (stricter than the `plotting` skill's general "skip decorative titles if axis labels are self-explanatory" — for a paper, always flag an embedded title regardless of whether the axes are self-explanatory). Quote the figure/subfigure that has one.
+- **No title on the figure itself.** A paper figure should never have a plot title — the first sentence of the figure caption serves as the title. This is unconditional for paper figures (stricter than the `figure-review` skill's general "skip decorative titles if axis labels are self-explanatory" — for a paper, always flag an embedded title regardless of whether the axes are self-explanatory). Quote the figure/subfigure that has one.
 - **Subfigure lettering, ordering, and finding-before-citation in text** — these are the same rules as the main skill's style-and-formatting section (do not duplicate them here as a separate finding; they're listed there because they apply to the document text, not the figure files themselves).
 
 ## Not checkable — human items
