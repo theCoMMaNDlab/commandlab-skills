@@ -1,6 +1,6 @@
 ---
 date_created: 2026-08-29 Sat
-date_modified: 2026-08-29 Sat
+date_modified: 2026-09-17 Thu
 description: Give feedback on an academic paper, thesis chapter, or manuscript draft (LaTeX source, .docx, .pdf, or pasted text) against the CoMMaND lab's writing guidelines — author/funding checklist, formatting and style rules (title case, Oxford commas, acronym usage, equation punctuation, brackets, tables, figure captions and ordering, Latin phrases, number spelling), LaTeX-specific typesetting (one-sentence-per-line, tensor notation, siunitx, autoref, sub/superscripts, biblatex, preamble), and an optional figure-design pass. Use this whenever someone shares a paper draft and asks for feedback, review, proofreading, or a formatting/style check — including requests like "can you review my draft," "check this against our style guide," "does this paper have any formatting issues," or "give feedback on this section" — even if they don't mention "guidelines" explicitly. Also use it when reviewing a paper's accompanying GitHub repository.
 name: writing-review
 ---
@@ -33,6 +33,7 @@ Likewise, silence is a valid outcome. A section with no problems gets no comment
 - Never write a comment that just tells the person to go check something themselves ("ensure all acronyms are defined," "verify the tenses are consistent"). Either do the check and report the specific instance, or leave it out.
 - Don't mention what's already correct. If a whole category (e.g., Oxford commas, figure ordering) has zero violations, omit that category from the output entirely — don't write "no issues found here."
 - Don't close with a summary sentence like "overall the writing is clear" or "the formatting is mostly correct." The list of specific comments is the entire deliverable.
+- Check every instance of a repeated pattern individually — every numbered equation, every figure reference, every acronym occurrence, every entry in a list — rather than sampling a few, judging them consistent, and extrapolating to the rest. Authors are reliably inconsistent even when they're mostly right, and "mostly right" is exactly where the exceptions get missed. If working from a low-resolution render (e.g., a PDF page image) makes an instance hard to verify, re-inspect it at higher fidelity instead of treating the uncertainty as a reason to skip it or wave it through.
 
 ## Author checklist
 
@@ -66,9 +67,12 @@ Apply these to the whole document (or all documents, if it's a multi-file LaTeX 
    - Redefinition inside a figure caption is also fine and shouldn't be flagged.
    - If the document uses more than about three non-standard acronyms, suggest cutting some for readability, and list which ones you'd consider cutting. Standard acronyms that don't count toward this: MRI, FEA, DNA, RNA, ASD, CSF.
    - Flag an acronym that's defined but only ever used once afterward — it's not saving anything and should just be spelled out instead.
-4. **Display equations.** A display equation is grammatically part of its sentence:
-   - It must not be preceded by a period.
-   - If it ends the sentence, it needs a period after it; if the sentence continues, it usually needs a comma after it. Quote the equation number and the punctuation (or lack of it) around it.
+4. **Display equations.** A display equation is grammatically part of the sentence that contains it — it never starts a new sentence on its own, even when what follows it reads like it could stand alone. A bare equation followed by a participial phrase ("representing X," "where Y is...") is a sentence fragment, not an independent sentence, no matter how complete it feels in isolation — don't be talked out of flagging it by the fact that the equation could be read as a subject.
+   Check every display equation in both directions, one at a time — don't sample a few and extrapolate; a paper with correctly-punctuated equations 1–8 can still break at 9, 23, or 27:
+   - **Before the equation:** if the text immediately preceding it is already a grammatically complete, independently-punctuated sentence (i.e., it ends in a period), that's a violation — the equation must instead be attached to that sentence with a comma (or no punctuation, if it continues a clause with no pause). This holds even if the equation is followed by something that superficially reads like its own sentence.
+   - **After the equation number:** check the case of the very next word. Lowercase continuation (`where`, `with`, `and`, a variable name, etc.) requires the equation to end in a comma. A new sentence or heading (capitalized) requires a period. No punctuation at all, a period before a lowercase continuation, or a comma before a capitalized new sentence — all of these are violations.
+   - Quote the equation number, the exact punctuation (or lack of it) immediately before it, and the first few words of what follows, on both sides.
+   - When working from a PDF/image rather than source text, a comma, a period, and no punctuation at all can look identical at multi-page-batch render resolution. Re-read each equation's immediate context as its own single-page (or tighter) crop before concluding what the punctuation is — don't wave the check off as "hard to tell from the image" and skip it.
 5. **Brackets and parentheses.**
    - Square brackets `[]` should group mathematical expressions; parentheses `()` should hold function arguments. Quote any expression using the wrong one.
    - Flag missing spaces where a parenthetical runs directly into surrounding prose text with no space before `(` or after `)`.
