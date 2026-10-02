@@ -5,6 +5,7 @@ Shared Claude Code skills for the lab — reviewing paper drafts, reviewing code
 - **writing-review** — review a paper/thesis draft against the lab's writing guidelines (formatting, style, LaTeX typesetting, author/funding checklist).
 - **code-review** — review Fortran or Python code (including Abaqus UEL subroutines) against the lab's coding conventions.
 - **figure-review** — conventions for matplotlib figures (layout, color, axes, math typesetting, hard-coded values).
+- **presentation-review** — review a slide deck exported to PDF from Keynote (slide numbers, capitalization consistency, color use, text density, figures, references, length). Bundles `scripts/check_slides.py`, which does the mechanical checks without an LLM and needs `pip install pymupdf`.
 
 The lab's [Writing style guide](https://drive.google.com/open?id=1JjN-z04sPDuR-2nwmUV6B3Vk3tdtVNaU4u-D1NsQYBs) doc covers what's *not* in these skills — things that need a person to decide or do (author list completeness, CRediT assignment, code-run sign-off, etc.), not a mechanical check.
 
@@ -15,7 +16,7 @@ Clone this repo, then symlink each skill into your personal Claude Code skills d
 ```bash
 git clone <this-repo-url> ~/commandlab-skills
 mkdir -p ~/.claude/skills
-for skill in writing-review code-review figure-review; do
+for skill in writing-review code-review figure-review presentation-review; do
   ln -s ~/commandlab-skills/$skill ~/.claude/skills/$skill
 done
 ```
