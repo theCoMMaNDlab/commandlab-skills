@@ -1,0 +1,3 @@
+# Python dependencies for scripts bundled with the skills.
+# presentation-review/scripts/check_slides.py (PDF text, font, and geometry extraction)
+pymupdf>=1.28.2

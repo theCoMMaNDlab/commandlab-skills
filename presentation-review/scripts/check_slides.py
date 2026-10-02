@@ -11,7 +11,7 @@ PDF -- no LLM involved. Findings marked "(check)" are candidates that a person
 script cannot make (do colors mean something, is a figure legible, are slide
 titles claims) are listed at the end so they are not silently skipped.
 
-Requires: pymupdf  (pip install pymupdf)
+Requires: pymupdf  (pip install -r requirements.txt, from the repo root)
 """
 from __future__ import annotations
 
@@ -261,7 +261,7 @@ def load_slides(path: Path) -> list[Slide]:
         try:
             import fitz as pymupdf  # older pymupdf releases
         except ImportError:
-            sys.exit("ERROR: pymupdf is not installed. Run: pip install pymupdf")
+            sys.exit("ERROR: pymupdf is not installed. Run: pip install -r requirements.txt (from the repo root)")
 
     doc = pymupdf.open(path)
     if doc.page_count == 0:

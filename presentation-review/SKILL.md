@@ -22,7 +22,7 @@ The lab uses Keynote, and a `.key` file can't be read directly. PDF gives text, 
 
 1. **Get the PDF and the talk length.** Ask for the intended length in **minutes** if it wasn't given. The length check can't run without it.
 2. **Check for a specific ask first** ("is my intro too long?", "does slide 12 work?") and answer it first and completely.
-3. **Run the script.** It needs `pymupdf` (`pip install pymupdf`, ideally in a venv):
+3. **Run the script.** It needs `pymupdf` (`pip install -r requirements.txt` from the repo root, ideally in a venv):
    ```bash
    python <skill-dir>/scripts/check_slides.py talk.pdf --minutes 15
    ```
