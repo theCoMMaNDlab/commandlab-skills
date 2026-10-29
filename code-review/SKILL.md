@@ -18,8 +18,9 @@ Some things a lab checklist asks for (does the code actually reproduce every res
 1. If the person provides a reference paper the code implements, keep it open for the **Paper alignment** check below — otherwise skip that check entirely rather than guessing at intended behavior.
 2. Run all of Sections 1–4 below by default — this is a full review, not an opt-in checklist.
 3. If you have a way to actually execute the code (an available interpreter/compiler and its inputs), try running it and report the real outcome — errors, warnings, or success — rather than assuming it works. If you can't run it, say so rather than silently skipping the claim.
-4. For an accompanying repository (not just a source file), also apply `references/repo-rules.md` — the same license/`.gitignore`/README/requirements checks apply to any lab repo, not just ones with a paper attached.
-5. Write up findings grouped by section, same output format as `writing-review`: location → quote/reference → what's wrong. Skip any section with nothing to report.
+4. If the person points you at a folder (not just a single source file), treat it as a repo and also apply `references/repo-rules.md` — the same license/`.gitignore`/README/requirements checks apply whether or not the folder has a paper attached, a remote, or its own `.git`.
+5. For a folder or repo, run `python3 -I <this skill's folder>/scripts/find_dupes.py <folder>` first and use its output for the **Single source of truth** check in Section 4 and the **Duplicate and generated files** item in `references/repo-rules.md`. It is read-only and needs no LLM; the judgment (is this copy intentional? what is the shared home?) is yours.
+6. Write up findings grouped by section, same output format as `writing-review`: location → quote/reference → what's wrong. Skip any section with nothing to report.
 
 ## Section 1 — Style & declarations
 
@@ -30,6 +31,7 @@ Some things a lab checklist asks for (does the code actually reproduce every res
 - Only flag names that are actually inconsistent, cryptic with no domain meaning, or arbitrarily mix conventions.
 - **Fortran variable declarations.** Flag a variable typed on one line and dimensioned separately via a `DIMENSION` statement (e.g., `REAL(8) :: TIME` followed by `DIMENSION TIME(2)`) — it should be combined (`REAL(8) :: TIME(2)`). List every affected variable.
 - **Spelling.** Check comments, variable/function names, and string literals for actual misspellings.
+- **American spelling.** The lab uses American English, so flag British variants in comments, identifiers, string literals, and plot labels, and give the American form. Cover whole families, not just examples: -our/-or (colour, behaviour), -ise/-isation (normalise, optimise, regularisation), -yse (analyse), -re (centre, fibre, metre), ae/oe medical terms (faeces, foetus, oedema, anaemia, oesophagus), and others (modelling, labelled, grey, ageing, artefact, programme). For identifiers, a rename can touch every usage, so list all occurrences. Exception: don't flag a name that must match an external API, file format, or library (e.g., a `colour` keyword some package requires); note it instead.
 - **Formatting/indentation.** Flag inconsistent indentation or formatting that meaningfully harms readability — not every minor stylistic variation.
 
 ## Section 2 — Dead code & documentation
@@ -51,4 +53,5 @@ Some things a lab checklist asks for (does the code actually reproduce every res
 - **Fortran:** flag implicit typing (missing `IMPLICIT NONE`) and poor use of common blocks.
 - Any `STOP` statement should be preceded by a descriptive `WRITE`/print explaining why execution is stopping — flag one that isn't.
 - **Modularity — Fortran:** only flag if the code is extremely monolithic in a way that genuinely hurts readability. **Python:** flag logic that's clearly reusable but hasn't been broken into functions.
+- **Single source of truth.** Anything used in more than one place should have one definition and multiple calls to it. Across a folder or repo, flag (a) byte-identical files in different locations, (b) near-identical source files (about 85% or more similar by line diff) that differ only in a few parameters, names or file paths, and (c) a routine, constant or block repeated within or between files. Name each pair or group with paths, say what differs, and suggest the shared home (a `common/` folder, a shared module or include, or one parameterized script). Constants repeated across files (a pressure, a time, a mesh radius) count too, since they must be edited in lockstep. Don't flag copies that diverge in real logic (for example a UMAT with a different constitutive model), but do say what base they share that could be factored out.
 - **Paper alignment:** only when a reference paper has been explicitly provided. Flag any significant discrepancy between the paper's formulation and the implementation.
