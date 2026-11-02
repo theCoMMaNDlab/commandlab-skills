@@ -1,6 +1,6 @@
 # CoMMaND lab Claude skills
 
-Shared Claude Code skills for the lab — reviewing paper drafts, reviewing code, and plotting conventions.
+Shared Claude Code skills for the lab — reviewing paper drafts, reviewing code, and plotting conventions. These encode the CoMMaND lab's own conventions and are provided as-is with no support: fork freely and adapt them to your own group.
 
 - **writing-review** — review a paper/thesis draft against the lab's writing guidelines (formatting, style, LaTeX typesetting, author/funding checklist).
 - **code-review** — review Fortran or Python code (including Abaqus UEL subroutines) against the lab's coding conventions.
@@ -14,7 +14,7 @@ The lab's [Writing style guide](https://drive.google.com/open?id=1JjN-z04sPDuR-2
 Clone this repo, then symlink each skill into your personal Claude Code skills directory so edits to your clone are picked up automatically:
 
 ```bash
-git clone <this-repo-url> ~/commandlab-skills
+git clone https://github.com/theCoMMaNDlab/commandlab-skills.git ~/commandlab-skills
 mkdir -p ~/.claude/skills
 for skill in writing-review code-review figure-review presentation-review; do
   ln -s ~/commandlab-skills/$skill ~/.claude/skills/$skill
