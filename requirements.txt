@@ -1,3 +1,10 @@
 # Python dependencies for scripts bundled with the skills.
 # presentation-review/scripts/check_slides.py (PDF text, font, and geometry extraction)
 pymupdf>=1.28.2
+
+# tensor-calculus/scripts/*.py use only the Python standard library, but they call
+# external programs that pip cannot install. Install them with the Brewfile
+# (`brew bundle` in the repo root; see README "System requirements"):
+#   - latexmk + a LaTeX distribution (MacTeX)   compile derivations with real LaTeX
+#   - pdftoppm (from poppler)                    render the compiled PDF to PNG
+#   - git                                        fetch the Hitchhiker's Guide from GitHub

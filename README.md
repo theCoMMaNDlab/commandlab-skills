@@ -6,6 +6,7 @@ Shared Claude Code skills for the lab — reviewing paper drafts, reviewing code
 - **code-review** — review Fortran or Python code (including Abaqus UEL subroutines) against the lab's coding conventions.
 - **figure-review** — conventions for matplotlib figures (layout, color, axes, math typesetting, hard-coded values).
 - **presentation-review** — review a slide deck exported to PDF from Keynote (slide numbers, capitalization consistency, color use, text density, figures, references, length). Bundles `scripts/check_slides.py`, which does the mechanical checks without an LLM (needs the Python dependency in [Python dependencies](#python-dependencies)).
+- **tensor-calculus** — derive, check, and typeset tensor-calculus and continuum-mechanics results (tangents, stresses, etc.) in line with [The Hitchhiker's Guide to Abaqus](https://github.com/mholla/hitchhikers-guide-to-abaqus)
 
 The lab's [Writing style guide](https://drive.google.com/open?id=1JjN-z04sPDuR-2nwmUV6B3Vk3tdtVNaU4u-D1NsQYBs) doc covers what's *not* in these skills — things that need a person to decide or do (author list completeness, CRediT assignment, code-run sign-off, etc.), not a mechanical check.
 
@@ -16,12 +17,23 @@ Clone this repo, then symlink each skill into your personal Claude Code skills d
 ```bash
 git clone https://github.com/theCoMMaNDlab/commandlab-skills.git ~/commandlab-skills
 mkdir -p ~/.claude/skills
-for skill in writing-review code-review figure-review presentation-review; do
+for skill in writing-review code-review figure-review presentation-review tensor-calculus; do
   ln -s ~/commandlab-skills/$skill ~/.claude/skills/$skill
 done
 ```
 
 To pick up updates later, just `git pull` in `~/commandlab-skills` — no need to redo the symlinks.
+
+### System requirements
+
+Some skills call programs that are not Python packages (so `pip` cannot install them). On macOS, install them with Homebrew using the [Brewfile](Brewfile):
+
+```bash
+cd ~/commandlab-skills
+brew bundle        # installs everything listed in Brewfile (poppler, git, MacTeX)
+```
+
+`tensor-calculus` needs `latexmk` (MacTeX), `pdftoppm` (poppler), and `git`. MacTeX is a ~5 GB download: if you already have a LaTeX installation that provides `latexmk`, delete the `cask "mactex-no-gui"` line from the Brewfile first.
 
 ### Python dependencies
 
